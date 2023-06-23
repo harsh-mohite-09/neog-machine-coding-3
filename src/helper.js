@@ -13,12 +13,32 @@ const getSortedList = (snacks, filters) => {
 
     case "product_name": {
       const sortedSnacks = [...snacks];
-      return sortedSnacks.sort((a, b) => a.product_name - b.product_name);
+      return sortedSnacks.sort((a, b) => {
+        const nameA = a.product_name.toUpperCase();
+        const nameB = b.product_name.toUpperCase();
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+        return 0;
+      });
     }
 
     case "product_name_desc": {
       const sortedSnacks = [...snacks];
-      return sortedSnacks.sort((a, b) => b.product_name - a.product_name);
+      return sortedSnacks.sort((a, b) => {
+        const nameA = a.product_name.toUpperCase();
+        const nameB = b.product_name.toUpperCase();
+        if (nameA > nameB) {
+          return -1;
+        }
+        if (nameA < nameB) {
+          return 1;
+        }
+        return 0;
+      });
     }
 
     case "product_weight": {
@@ -55,12 +75,32 @@ const getSortedList = (snacks, filters) => {
 
     case "ingredients": {
       const sortedSnacks = [...snacks];
-      return sortedSnacks.sort((a, b) => a.ingredients[0] - b.ingredients[0]);
+      return sortedSnacks.sort((a, b) => {
+        const nameA = a.ingredients[0].toUpperCase();
+        const nameB = b.ingredients[0].toUpperCase();
+        if (nameA > nameB) {
+          return -1;
+        }
+        if (nameA < nameB) {
+          return 1;
+        }
+        return 0;
+      });
     }
 
     case "ingredients_desc": {
       const sortedSnacks = [...snacks];
-      return sortedSnacks.sort((a, b) => b.ingredients[0] - a.ingredients[0]);
+      return sortedSnacks.sort((a, b) => {
+        const nameA = a.ingredients[0].toUpperCase();
+        const nameB = b.ingredients[0].toUpperCase();
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+        return 0;
+      });
     }
 
     default:

@@ -59,8 +59,6 @@ function App() {
     }
   };
 
-  console.log(sort);
-
   return (
     <div className="App">
       <h1>Snack Table</h1>
