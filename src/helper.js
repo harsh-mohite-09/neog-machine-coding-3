@@ -3,7 +3,7 @@ const getSortedList = (snacks, filters) => {
   switch (filters.sort) {
     case "id": {
       const sortedSnacks = [...snacks];
-      return sortedSnacks.sort((a, b) => a.id - b.id);
+      return sortedSnacks.sort((a, b) => parseInt(a.id) - parseInt(b.id));
     }
 
     case "id_desc": {
@@ -28,7 +28,9 @@ const getSortedList = (snacks, filters) => {
 
     case "product_weight_desc": {
       const sortedSnacks = [...snacks];
-      return sortedSnacks.sort((a, b) => b.product_weight - a.product_weight);
+      return sortedSnacks.sort(
+        (a, b) => parseInt(b.product_weight) - parseInt(a.product_weight)
+      );
     }
 
     case "price": {
