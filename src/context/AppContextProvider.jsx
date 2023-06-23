@@ -5,9 +5,31 @@ const AppContext = createContext({
   dispatch: () => {},
 });
 
-const initialState = {};
+const initialState = {
+  filters: {
+    search: "",
+    sort: "",
+  },
+};
 
-const reducer = (state, action) => {};
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "SEARCH":
+      return {
+        ...state,
+        search: action.payload,
+      };
+
+    case "SORT":
+      return {
+        ...state,
+        sort: action.payload,
+      };
+
+    default:
+      break;
+  }
+};
 
 const AppContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);

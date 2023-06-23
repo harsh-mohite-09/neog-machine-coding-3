@@ -1,0 +1,20 @@
+input {
+  width: 15rem;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+th {
+  border: 1px solid black;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+td {
+  border: 1px solid black;
+  padding: 0.5rem;
+}
